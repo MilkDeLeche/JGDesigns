@@ -2188,6 +2188,12 @@ Work Preview Modal - Our Works gallery (glassmorphism design)
 }
 
 /* Responsive JG Designs logos */
+img.logo-light {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 136px;
+  padding-right: 136px;
+}
 .brand.logo-switcher img,
 .navigation .brand img {
   max-width: 100% !important;
