@@ -1,0 +1,236 @@
+/* Dark Mode - JG Residential */
+/* Applied when html has data-theme="dark" */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  color: #e4e4e4;
+  background-color: #1a1a1a;
+}
+
+html[data-theme="dark"] a {
+  color: #e4e4e4;
+}
+html[data-theme="dark"] a:hover,
+html[data-theme="dark"] a:active,
+html[data-theme="dark"] a:focus {
+  color: #fff;
+}
+
+html[data-theme="dark"] hr {
+  border-top-color: rgba(255, 255, 255, 0.15);
+}
+
+html[data-theme="dark"] .page-wrapper:after,
+html[data-theme="dark"] .page-wrapper:before {
+  background-color: #1a1a1a;
+}
+
+/* Hero / Heading */
+html[data-theme="dark"] .hero-section .heading-wrapper {
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] .hero-section .heading-wrapper:before {
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] .hero-section .heading-wrapper .title:before {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+html[data-theme="dark"] .hero-section .heading-wrapper .owl-navigation .owl-prev,
+html[data-theme="dark"] .hero-section .heading-wrapper .owl-navigation .owl-next {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+html[data-theme="dark"] .hero-section .heading-wrapper .owl-navigation .owl-prev:after,
+html[data-theme="dark"] .hero-section .heading-wrapper .owl-navigation .owl-next:after {
+  color: #fff;
+}
+
+/* Nav */
+html[data-theme="dark"] .nav-btn figure {
+  background-color: #fff;
+}
+html[data-theme="dark"] .navigation-off-canvas {
+  background-color: #0d0d0d;
+}
+html[data-theme="dark"] .navigation-off-canvas ul li {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Header background (subpages) */
+html[data-theme="dark"] .header-background:before {
+  background-color: #1a1a1a;
+}
+html[data-theme="dark"] #big-map:before {
+  background-color: #1a1a1a;
+}
+
+/* Block / Content areas */
+html[data-theme="dark"] .block {
+  background-color: transparent;
+}
+html[data-theme="dark"] .block .bg.white {
+  background-color: #252525;
+}
+html[data-theme="dark"] .block .bg.black {
+  background-color: #0d0d0d;
+}
+
+/* Gallery */
+html[data-theme="dark"] .gallery .gallery-item .title .name,
+html[data-theme="dark"] .gallery .gallery-item .title .place {
+  color: #e4e4e4;
+}
+html[data-theme="dark"] .gallery .gallery-item .framed {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Footer */
+html[data-theme="dark"] #page-footer .footer-wrapper {
+  background-color: #2a2a2a;
+}
+html[data-theme="dark"] #page-footer .copyright {
+  background-color: #0d0d0d;
+  color: rgba(255, 255, 255, 0.7);
+}
+html[data-theme="dark"] #page-footer h3,
+html[data-theme="dark"] #page-footer p,
+html[data-theme="dark"] #page-footer address,
+html[data-theme="dark"] #page-footer a {
+  color: rgba(255, 255, 255, 0.8);
+}
+html[data-theme="dark"] #page-footer .map-wrapper #map {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+html[data-theme="dark"] #page-footer .separator {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Section titles */
+html[data-theme="dark"] .section-title h2 {
+  color: #e4e4e4;
+}
+html[data-theme="dark"] .homepage h2 {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tags, buttons */
+html[data-theme="dark"] .tag {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #e4e4e4;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+html[data-theme="dark"] .btn-default {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+html[data-theme="dark"] .btn-default:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Framed / shadow elements */
+html[data-theme="dark"] .framed {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+html[data-theme="dark"] .framed.shadow {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Featured works carousel */
+html[data-theme="dark"] .featured-works-carousel .slide .tags .tag {
+  color: #e4e4e4;
+}
+html[data-theme="dark"] .featured-works-carousel .slide p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Work detail page */
+html[data-theme="dark"] .work-detail .left .title h2,
+html[data-theme="dark"] .work-detail .left .title h3 {
+  color: #e4e4e4;
+}
+html[data-theme="dark"] .work-detail .left dl dt,
+html[data-theme="dark"] .work-detail .left dl dd {
+  color: rgba(255, 255, 255, 0.8);
+}
+html[data-theme="dark"] .work-detail .left p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Logos section */
+html[data-theme="dark"] .logos .logo img {
+  filter: brightness(0.9);
+}
+
+/* Dark mode toggle button - circle with moon/sun, left of nav */
+.navigation .right {
+  position: relative;
+  padding-right: 50px;
+}
+.dark-mode-toggle {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: inherit;
+}
+.dark-mode-toggle .light-icon {
+  display: none;
+}
+.dark-mode-toggle .dark-icon {
+  display: inline-block;
+}
+html[data-theme="dark"] .dark-mode-toggle .dark-icon {
+  display: none;
+}
+html[data-theme="dark"] .dark-mode-toggle .light-icon {
+  display: inline-block;
+  color: #e4e4e4;
+}
+html[data-theme="dark"] .dark-mode-toggle {
+  border-color: #e4e4e4;
+}
+.dark-mode-toggle:hover {
+  opacity: 0.8;
+}
+html[data-theme="dark"] .separator {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* About carousel logo - white in dark mode, only one visible at a time */
+.logo-switcher .logo-dark {
+  display: none !important;
+}
+html[data-theme="dark"] .logo-switcher .logo-light {
+  display: none !important;
+}
+html[data-theme="dark"] .logo-switcher .logo-dark {
+  display: block !important;
+}
+
+/* Work modal - already dark glassmorphism, slight tweaks for dark page */
+html[data-theme="dark"] .work-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+html[data-theme="dark"] .work-modal-btn-primary {
+  color: #000;
+}
+html[data-theme="dark"] .work-modal-btn-primary:hover {
+  color: #000;
+}

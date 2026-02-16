@@ -1,0 +1,7 @@
+# Netlify configuration for JG Designs
+[build]
+  publish = "html"
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "18"

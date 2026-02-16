@@ -1,0 +1,35 @@
+/* Caelia font family - JG Designs */
+@font-face {
+    font-family: 'Caelia';
+    src: url('../fonts/Caelia-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Caelia Light';
+    src: url('../fonts/Caelia-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Caelia Medium';
+    src: url('../fonts/Caelia-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Basic text uses Caelia Light */
+body,
+p, a, span, li, td, th, label, input, textarea, select {
+    font-family: 'Caelia Light', 'Caelia', sans-serif !important;
+}
+
+/* Headings use Caelia Medium */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Caelia Medium', 'Caelia', sans-serif !important;
+}
+
+/* Hero h1 uses Caelia Regular (overrides above) */
+.hero-section .heading .title h1 {
+    font-family: 'Caelia', sans-serif !important;
+}
