@@ -783,9 +783,8 @@ ul li {
 }
 .gallery .gallery-item .title {
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   left: 10px;
-  bottom: -70px;
   z-index: 1;
 }
 .gallery .gallery-item .title .name {
@@ -804,7 +803,7 @@ ul li {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
   opacity: 0.4;
   position: absolute;
-  bottom: -45px;
+  bottom: 10px;
   right: 10px;
   font-size: 24px;
 }
@@ -821,6 +820,20 @@ ul li {
 }
 .gallery .gallery-item .image img {
   max-width: 100%;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* Scroll-reveal animation for gallery (Intersection Observer) */
+.gallery.scroll-reveal-gallery .gallery-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.gallery.scroll-reveal-gallery .gallery-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-section {
@@ -1922,6 +1935,23 @@ select option {
     left: 30px;
   }
 
+  /* Carousel logo - locked position, same as desktop (right side), scales down */
+  .featured-works-carousel .slide .title.logo-switcher {
+    left: auto;
+    right: 15px;
+    text-align: right;
+    max-width: 90vw;
+  }
+
+  .featured-works-carousel .title.logo-switcher img {
+    max-width: 55vw !important;
+    width: auto !important;
+    height: auto !important;
+    /* Reduced padding on mobile to fit; position stays locked right */
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
   .featured-works-carousel .owl-controls {
     bottom: -30px;
   }
@@ -2021,7 +2051,7 @@ select option {
   }
 
   .gallery .gallery-item .title {
-    bottom: -50px;
+    bottom: 15px;
   }
 
   .time-line .time-line-item p {
@@ -2055,29 +2085,79 @@ select option {
     float: none !important;
   }
 
+  .work-modal {
+    padding: 0.5rem;
+    align-items: flex-start;
+  }
+
   .work-modal-card {
-    width: 95%;
-    max-height: 85vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .work-modal-card .work-modal-image {
+    flex-shrink: 0;
+  }
+
+  .work-modal-card .work-modal-content {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .work-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
   }
 
   .work-modal-content {
-    padding: 24px;
+    padding: 12px 16px 16px;
   }
 
   .work-modal-image {
-    height: 200px;
+    height: 110px;
+    min-height: 110px;
   }
 
   .work-modal-title {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
+    margin: 8px 0 6px 0;
+    line-height: 1.25;
   }
 
   .work-modal-description {
-    font-size: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+  }
+
+  .work-modal-features {
+    margin: 0 0 14px 0;
+  }
+
+  .work-modal-features li {
+    font-size: 0.8rem;
+    margin-bottom: 6px;
+  }
+
+  .work-modal-features li::before {
+    margin-right: 8px;
   }
 
   .work-modal-actions {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .work-modal-btn {
+    padding: 12px 16px;
+    font-size: 0.95rem;
   }
 }
 
@@ -2294,11 +2374,14 @@ Work Preview Modal - Our Works gallery (glassmorphism design)
 }
 
 /* Responsive JG Designs logos */
-img.logo-light {
+.brand.logo-switcher img.logo-light,
+.brand.logo-switcher img.logo-dark,
+.navigation .brand img.logo-light,
+.navigation .brand img.logo-dark {
   padding-top: 0px;
   padding-bottom: 0px;
-  padding-left: 136px;
-  padding-right: 136px;
+  padding-left: 152px;
+  padding-right: 152px;
 }
 .brand.logo-switcher img,
 .navigation .brand img {
@@ -2313,6 +2396,13 @@ img.logo-light {
   width: auto !important;
   height: auto !important;
 }
+/* Featured works carousel logo - locked position, same on all screen sizes */
+.featured-works-carousel .title.logo-switcher img {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 99px;
+  padding-right: 99px;
+}
 #page-footer .logo.logo-switcher img {
   max-width: 100% !important;
   width: auto !important;
@@ -2320,8 +2410,10 @@ img.logo-light {
   max-height: 154px !important;
 }
 @media (max-width: 767px) {
-  img.logo-light,
-  img.logo-dark {
+  .brand.logo-switcher img.logo-light,
+  .brand.logo-switcher img.logo-dark,
+  .navigation .brand img.logo-light,
+  .navigation .brand img.logo-dark {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -2329,8 +2421,7 @@ img.logo-light {
   .navigation .brand img {
     max-height: 44px !important;
   }
-  .block .title.logo-switcher img,
-  .featured-works-carousel .title.logo-switcher img {
+  .block .title.logo-switcher img {
     max-width: 85vw !important;
   }
   #page-footer .logo.logo-switcher img {

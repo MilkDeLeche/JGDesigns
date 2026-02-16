@@ -44,6 +44,27 @@ $(document).ready(function($) {
         if (e.key === "Escape" && $("#work-modal").hasClass("is-open")) closeWorkModal();
     });
 
+    // Gallery scroll reveal (Intersection Observer) – images animate in as you scroll
+    (function galleryScrollReveal() {
+        var gallery = document.querySelector(".gallery.scroll-reveal-gallery");
+        if (!gallery) return;
+        var items = gallery.querySelectorAll(".gallery-item");
+        if (!items.length) return;
+        if (typeof IntersectionObserver === "undefined") {
+            items.forEach(function(el) { el.classList.add("revealed"); });
+            return;
+        }
+        var observer = new IntersectionObserver(
+            function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) entry.target.classList.add("revealed");
+                });
+            },
+            { rootMargin: "0px 0px -5% 0px", threshold: 0 }
+        );
+        items.forEach(function(el) { observer.observe(el); });
+    })();
+
     // Logo links: smooth slow scroll to top
     $(document).on("click", ".logos a[href='#']", function(e) {
         e.preventDefault();
@@ -227,13 +248,7 @@ $(document).ready(function($) {
         });
     });
 
-    //  Scroll Reveal
-
-    if (document.documentElement.clientWidth > 768) {
-
-        window.scrollReveal = new scrollReveal();
-
-    }
+    //  Scroll Reveal - init deferred to window.load for correct layout
 
 //  Form Validation - Netlify Forms
 
@@ -271,7 +286,11 @@ $(document).ready(function($) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $(window).load(function(){
-
+    // Scroll Reveal - init after images/layout ready; viewportFactor 0.15 = reveal as element enters view
+    if (typeof scrollReveal === 'function') {
+        window.scrollReveal = new scrollReveal({ viewportFactor: 0.15 });
+        setTimeout(function() { window.dispatchEvent(new Event('scroll')); }, 150);
+    }
 });
 
 $(window).resize(function(){
