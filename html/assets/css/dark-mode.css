@@ -234,3 +234,16 @@ html[data-theme="dark"] .work-modal-btn-primary {
 html[data-theme="dark"] .work-modal-btn-primary:hover {
   color: #000;
 }
+
+/* Responsive - dark mode toggle on small screens */
+@media (max-width: 767px) {
+  .navigation .right {
+    padding-right: 5px;
+  }
+  .dark-mode-toggle {
+    right: 45px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}

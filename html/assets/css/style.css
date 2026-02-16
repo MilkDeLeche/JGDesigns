@@ -24,6 +24,12 @@ Body copy:		'Roboto', sans-serif; 12px;
 Headers:		'Roboto', sans-serif;
 
 -------------------------------------------------------------------*/
+/* Base responsive - prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* 1. Header */
 .navigation {
   padding: 20px 0;
@@ -1937,12 +1943,16 @@ select option {
   }
 
   .person .left {
-    width: 115px;
-    height: 165px;
+    width: 100%;
+    max-width: 165px;
+    height: auto;
+    float: none;
+    margin-bottom: 15px;
   }
 
   .person .right {
-    padding-left: 130px;
+    padding-left: 0;
+    width: 100%;
   }
 
   .time-line .time-line-item .date {
@@ -1973,6 +1983,102 @@ select option {
   #page-services .one-item-carousel {
     margin: 15px 0;
   }
+
+  .featured-blocks .featured-block .description {
+    padding-left: 0;
+  }
+
+  .header-background .title h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    padding: 0 20px;
+  }
+
+  .header-background.bg-transfer .container .title {
+    padding: 20px;
+  }
+
+  .height-400px {
+    height: 250px !important;
+  }
+
+  #page-footer .map-wrapper #map {
+    height: 200px;
+  }
+
+  .page-wrapper {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page-wrapper:after,
+  .page-wrapper:before {
+    width: 15px;
+  }
+
+  .gallery .gallery-item {
+    margin-bottom: 50px;
+  }
+
+  .gallery .gallery-item .title {
+    bottom: -50px;
+  }
+
+  .time-line .time-line-item p {
+    padding-left: 0;
+  }
+
+  .time-line .time-line-item .date {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .block {
+    padding: 30px 0;
+  }
+
+  .container .block {
+    padding: 20px 15px;
+  }
+
+  .stick-to-footer {
+    margin-bottom: -30px;
+  }
+
+  #form-contact .form-group.pull-right {
+    float: none !important;
+    margin-top: 15px;
+  }
+
+  #form-contact .pull-left {
+    float: none !important;
+  }
+
+  .work-modal-card {
+    width: 95%;
+    max-height: 85vh;
+  }
+
+  .work-modal-content {
+    padding: 24px;
+  }
+
+  .work-modal-image {
+    height: 200px;
+  }
+
+  .work-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .work-modal-description {
+    font-size: 1rem;
+  }
+
+  .work-modal-actions {
+    grid-template-columns: 1fr;
+  }
 }
 
 /*------------------------------------------------------------------
@@ -1994,7 +2100,7 @@ Work Preview Modal - Our Works gallery (glassmorphism design)
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
+  padding: 1rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -2214,6 +2320,11 @@ img.logo-light {
   max-height: 154px !important;
 }
 @media (max-width: 767px) {
+  img.logo-light,
+  img.logo-dark {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   .brand.logo-switcher img,
   .navigation .brand img {
     max-height: 44px !important;
@@ -2224,5 +2335,14 @@ img.logo-light {
   }
   #page-footer .logo.logo-switcher img {
     max-height: 120px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .brand.logo-switcher img.logo-light,
+  .brand.logo-switcher img.logo-dark,
+  .navigation .brand img.logo-light,
+  .navigation .brand img.logo-dark {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
   }
 }
