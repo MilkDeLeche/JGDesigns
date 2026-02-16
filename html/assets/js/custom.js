@@ -296,22 +296,13 @@ function doneResizing(){
 
 
 function simpleMap(){
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'custom.js:211',message:'simpleMap function entry',data:{googleMapsExists:typeof google!=='undefined'&&typeof google.maps!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,D'})}).catch(()=>{});
-    // #endregion
     var _latitude = 34.038405;
     var _longitude = -117.946944;
     var element = "map";
     //var mapStyles = [{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}];
     var mapStyles = [{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#d3d3d3"}]},{"featureType":"transit","stylers":[{"color":"#808080"},{"visibility":"off"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"visibility":"on"},{"color":"#b3b3b3"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.local","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"weight":1.8}]},{"featureType":"road.local","elementType":"geometry.stroke","stylers":[{"color":"#d7d7d7"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#ebebeb"}]},{"featureType":"administrative","elementType":"geometry","stylers":[{"color":"#a7a7a7"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"landscape","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#efefef"}]},{"featureType":"road","elementType":"labels.text.fill","stylers":[{"color":"#696969"}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"visibility":"on"},{"color":"#737373"}]},{"featureType":"poi","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"poi","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#d6d6d6"}]},{"featureType":"road","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#dadada"}]}];
     var mapElement = document.getElementById(element);
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'custom.js:225',message:'Map element retrieved',data:{mapElementExists:mapElement!==null,elementId:element},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-    // #endregion
     if (!mapElement) {
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'custom.js:228',message:'Map element not found, returning early',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
-        // #endregion
         return;
     }
     var mapCenter = new google.maps.LatLng(_latitude,_longitude);
@@ -322,18 +313,12 @@ function simpleMap(){
         scrollwheel: false,
         styles: mapStyles
     };
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'custom.js:238',message:'Creating Google Maps instance',data:{hasGoogleMaps:typeof google.maps.Map!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B,D'})}).catch(()=>{});
-    // #endregion
     var map = new google.maps.Map(mapElement, mapOptions);
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(_latitude,_longitude),
         map: map,
         icon: "assets/img/marker.png"
     });
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'custom.js:245',message:'simpleMap function exit - map created successfully',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-    // #endregion
 }
 
 ////////////////////////////

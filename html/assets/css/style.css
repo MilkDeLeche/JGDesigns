@@ -2172,3 +2172,51 @@ Work Preview Modal - Our Works gallery (glassmorphism design)
   max-height: 90vh;
   object-fit: contain;
 }
+.preloader-video-desktop {
+  display: block;
+}
+.preloader-video-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .preloader-video-desktop {
+    display: none;
+  }
+  .preloader-video-mobile {
+    display: block;
+  }
+}
+
+/* Responsive JG Designs logos */
+.brand.logo-switcher img,
+.navigation .brand img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: 52px !important;
+}
+.block .title.logo-switcher img,
+.featured-works-carousel .title.logo-switcher img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+}
+#page-footer .logo.logo-switcher img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: 154px !important;
+}
+@media (max-width: 767px) {
+  .brand.logo-switcher img,
+  .navigation .brand img {
+    max-height: 44px !important;
+  }
+  .block .title.logo-switcher img,
+  .featured-works-carousel .title.logo-switcher img {
+    max-width: 85vw !important;
+  }
+  #page-footer .logo.logo-switcher img {
+    max-height: 120px !important;
+  }
+}

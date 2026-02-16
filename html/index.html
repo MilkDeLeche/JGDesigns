@@ -75,8 +75,11 @@
 <!-- Preloader -->
 <div id="preloader" class="preloader" aria-hidden="false">
     <div class="preloader-inner">
-        <video class="preloader-video" autoplay muted playsinline>
+        <video class="preloader-video preloader-video-desktop" autoplay muted playsinline>
             <source src="assets/jons_assets/preloaderjgdesings.mp4" type="video/mp4">
+        </video>
+        <video class="preloader-video preloader-video-mobile" autoplay muted playsinline>
+            <source src="assets/jons_assets/preloaderjgdesingsvertical.mp4" type="video/mp4">
         </video>
     </div>
 </div>
@@ -413,7 +416,7 @@
 <script type="text/javascript">
 (function() {
   var preloader = document.getElementById('preloader');
-  var video = preloader ? preloader.querySelector('.preloader-video') : null;
+  var videos = preloader ? preloader.querySelectorAll('.preloader-video') : [];
   var duration = 5000;
   var startTime = Date.now();
   function hidePreloader() {
@@ -423,48 +426,20 @@
       setTimeout(function() { preloader.style.display = 'none'; }, 600);
     }
   }
-  if (video) {
-    video.addEventListener('ended', hidePreloader);
-  }
+  videos.forEach(function(v) { v.addEventListener('ended', hidePreloader); });
   setTimeout(hidePreloader, duration);
 })();
 </script>
 
 <script type="text/javascript">
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:501',message:'Footer script execution started',data:{googleMapsExists:typeof google!=='undefined',simpleMapExists:typeof simpleMap!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,B'})}).catch(()=>{});
-    // #endregion
     var mapElementExists = document.getElementById('map') !== null;
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:503',message:'Map element check',data:{mapElementExists:mapElementExists,footerExists:document.getElementById('page-footer')!==null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C,E'})}).catch(()=>{});
-    // #endregion
     if (typeof google !== 'undefined' && typeof google.maps !== 'undefined' && typeof google.maps.event !== 'undefined') {
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:506',message:'Google Maps API loaded, setting up listener',data:{simpleMapType:typeof simpleMap},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-        // #endregion
         google.maps.event.addDomListener(window, 'load', function() {
-            // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:509',message:'Window load event fired, calling simpleMap',data:{mapElementExists:document.getElementById('map')!==null},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,C'})}).catch(()=>{});
-            // #endregion
             try {
                 simpleMap();
-                // #region agent log
-                fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:513',message:'simpleMap executed successfully',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-                // #endregion
-            } catch (e) {
-                // #region agent log
-                fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:516',message:'simpleMap error',data:{error:e.toString(),stack:e.stack},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
-                // #endregion
-            }
+            } catch (e) {}
         });
-    } else {
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:520',message:'Google Maps API not loaded',data:{googleExists:typeof google!=='undefined',googleMapsExists:typeof google!=='undefined'&&typeof google.maps!=='undefined'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
-        // #endregion
     }
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/07923e35-fcfe-4767-9219-c4b593903c0a',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'index.html:523',message:'Footer script execution completed',data:{footerVisible:document.getElementById('page-footer')?window.getComputedStyle(document.getElementById('page-footer')).display!=='none':false},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
-    // #endregion
 </script>
 
 <!--[if lte IE 9]>
