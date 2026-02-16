@@ -72,6 +72,14 @@
 </head>
 
 <body>
+<!-- Preloader -->
+<div id="preloader" class="preloader" aria-hidden="false">
+    <div class="preloader-inner">
+        <video class="preloader-video" autoplay muted playsinline>
+            <source src="assets/jons_assets/preloaderjgdesings.mp4" type="video/mp4">
+        </video>
+    </div>
+</div>
 <!-- Work Preview Modal -->
 <div id="work-modal" class="work-modal" aria-hidden="true">
     <div class="work-modal-backdrop"></div>
@@ -402,6 +410,25 @@
 <script type="text/javascript" src="assets/js/scrollReveal.min.js"></script>
 
 <script type="text/javascript" src="assets/js/custom.js"></script>
+<script type="text/javascript">
+(function() {
+  var preloader = document.getElementById('preloader');
+  var video = preloader ? preloader.querySelector('.preloader-video') : null;
+  var duration = 5000;
+  var startTime = Date.now();
+  function hidePreloader() {
+    if (preloader) {
+      preloader.classList.add('is-hidden');
+      preloader.setAttribute('aria-hidden', 'true');
+      setTimeout(function() { preloader.style.display = 'none'; }, 600);
+    }
+  }
+  if (video) {
+    video.addEventListener('ended', hidePreloader);
+  }
+  setTimeout(hidePreloader, duration);
+})();
+</script>
 
 <script type="text/javascript">
     // #region agent log
