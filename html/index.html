@@ -75,10 +75,10 @@
 <!-- Preloader -->
 <div id="preloader" class="preloader" aria-hidden="false">
     <div class="preloader-inner">
-        <video class="preloader-video preloader-video-desktop" autoplay muted playsinline>
+        <video class="preloader-video preloader-video-desktop" autoplay muted playsinline loop>
             <source src="assets/jons_assets/preloaderjgdesings.mp4" type="video/mp4">
         </video>
-        <video class="preloader-video preloader-video-mobile" autoplay muted playsinline>
+        <video class="preloader-video preloader-video-mobile" autoplay muted playsinline loop>
             <source src="assets/jons_assets/preloaderjgdesingsvertical.mp4" type="video/mp4">
         </video>
     </div>
@@ -426,7 +426,6 @@
       setTimeout(function() { preloader.style.display = 'none'; }, 600);
     }
   }
-  videos.forEach(function(v) { v.addEventListener('ended', hidePreloader); });
   setTimeout(hidePreloader, duration);
 })();
 </script>

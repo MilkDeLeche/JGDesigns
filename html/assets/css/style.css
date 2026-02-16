@@ -832,8 +832,8 @@ ul li {
   top: 0;
 }
 .hero-section.is-carousel .hero-wrapper .slide {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=45);
-  opacity: 0.45;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
+  opacity: 0.35;
   -moz-transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
@@ -841,8 +841,8 @@ ul li {
   z-index: 1;
 }
 .hero-section.is-carousel .hero-wrapper .slide:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=45);
-  opacity: 0.45;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=35);
+  opacity: 0.35;
   color: #fff;
 }
 .hero-section.is-carousel .hero-wrapper .slide:hover a {
@@ -857,8 +857,8 @@ ul li {
   transform: rotate(-3deg) translateY(-200px);
 }
 .hero-section.is-carousel .hero-wrapper .slide:after {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=85);
+  opacity: 0.85;
   -moz-transform: rotate(-3deg) translateY(0px);
   -ms-transform: rotate(-3deg) translateY(0px);
   -webkit-transform: rotate(-3deg) translateY(0px);
@@ -921,8 +921,8 @@ ul li {
   opacity: 1;
 }
 .hero-section.is-carousel .hero-wrapper .owl-carousel .owl-item.active.center .slide {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
-  opacity: 0.8;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=65);
+  opacity: 0.65;
 }
 .hero-section.is-carousel .hero-wrapper .owl-carousel .owl-item.active.center .slide:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
